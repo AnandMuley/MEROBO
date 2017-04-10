@@ -1,0 +1,7 @@
+<div>{{name}}</div>
+<div>{{status}}</div>
+<div ng-if="status == AVAILABLE">
+  <div *ngFor="let booking of bookings">
+    {{booking}}
+  </div>
+</div>
