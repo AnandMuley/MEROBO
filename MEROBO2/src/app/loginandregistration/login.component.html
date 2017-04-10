@@ -1,0 +1,28 @@
+<div class="table login-panel">
+  <div class="row">
+    <div class="col site-title">{{title}}</div>
+  </div>
+  <div class="row">
+    <div class="col sub-title">{{subTitle}}</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input [(ngModel)]="username" type="text" placeholder="Username"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input [(ngModel)]="password" type="password" placeholder="Password"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col align-center">
+      <button (click)="autheticate()" type="button">Login</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col align-center">
+      <a href="forgotpassword" class="links">Forgot Password</a>
+    </div>
+  </div>
+</div>
