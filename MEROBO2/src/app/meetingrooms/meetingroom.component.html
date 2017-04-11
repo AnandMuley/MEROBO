@@ -2,6 +2,6 @@
 <div>{{status}}</div>
 <div ng-if="status == AVAILABLE">
   <div *ngFor="let booking of bookings">
-    {{booking}}
+    <booking [data]="booking"></booking>
   </div>
 </div>

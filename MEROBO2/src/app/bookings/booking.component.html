@@ -1,9 +1,9 @@
 <div>
-  <h3>{{teamName}}</h3>
-  <div>{{startTime|date:'shortTime'}} to {{endTime|date:'shortTime'}}</div>
+  <h3>{{data.teamName}}</h3>
+  <div>{{data.startTime|date:'shortTime'}} to {{data.endTime|date:'shortTime'}}</div>
 </div>
 <div>
-  <h4>{{status}}</h4>
-  <div>{{bookingTime|date:'shortTime'}}</div>
-  <div>{{bookedBy}}</div>
+  <h4>{{data.status}}</h4>
+  <div>{{data.bookingTime|date:'shortTime'}}</div>
+  <div>{{data.bookedBy}}</div>
 </div>

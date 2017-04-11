@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {BookingComponent} from '../bookings/booking.component';
+import {Booking} from '../bookings/booking';
 
 enum MeetingRoomStatus {
   AVAILABLE =1,
@@ -12,7 +13,7 @@ enum MeetingRoomStatus {
 })
 export class MeetingRoomComponent {
   name:string;
-  bookings:Array<BookingComponent>;
+  bookings:Booking[]=[new Booking("Avengers","Iron Man")];
   status: MeetingRoomStatus;
 
   constructor() {
@@ -22,6 +23,5 @@ export class MeetingRoomComponent {
   fetch():void {
     this.name = 'Pinnacle';
     this.status = MeetingRoomStatus.AVAILABLE;
-    this.bookings = [new BookingComponent()];
   }
 }

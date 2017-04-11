@@ -17,7 +17,6 @@ export class LoginComponent{
 
   autheticate():void{
     if(this.username=="user" && this.password=="pass"){
-
     }
 
   }
