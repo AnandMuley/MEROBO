@@ -13,12 +13,7 @@ export class BookingComponent{
   }
 
   fetch():void{
-    // this.data.teamName = "Avengers";
-    // this.data.startTime = Date.now();
-    // this.endTime = Date.now() + 500000;
-    // this.status = "BOOKED";
-    // this.bookedBy = "Iron Man";
-    // this.bookingTime = Date.now() - 500000;
+    // this.data = new Booking("Avengers",Date.now(),Date.now() + 500000,"BOOKED",Date.now() - 500000,"Iron Man");
   }
 
 }

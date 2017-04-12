@@ -1,13 +1,25 @@
 export class Booking{
 
-  constructor(
-  public teamName:string,
-  // public startTime:number,
-  // public endTime:number,
-  // public status:string,
-  // public bookingTime:number,
-  public bookedBy:string
-){
+  teamName:string;
+  startTime:number;
+  endTime:number;
+  status:string;
+  bookingTime:number;
+  bookedBy:string;
 
+  constructor(
+  teamName:string,
+  startTime:number,
+  endTime:number,
+  status:string,
+  bookingTime:number,
+  bookedBy:string
+){
+this.teamName = teamName;
+this.startTime = startTime;
+this.endTime = endTime;
+this.status = status;
+this.bookingTime = bookingTime;
+this.bookedBy = bookedBy;
 }
 }
