@@ -8,6 +8,7 @@ import { MeetingRoomComponent } from './meetingrooms/meetingroom.component';
 import {RouterModule,Routes} from '@angular/router';
 import {LoginComponent} from './loginandregistration/login.component';
 import {BookingComponent} from './bookings/booking.component';
+import {ProfileComponent} from './profile/profile.component'
 
 const appRoutes: Routes=[
   {path:'login',component:LoginComponent},
@@ -16,7 +17,7 @@ const appRoutes: Routes=[
 
 @NgModule({
   declarations: [
-    AppComponent,MeetingRoomComponent,LoginComponent,BookingComponent
+    AppComponent,MeetingRoomComponent,LoginComponent,BookingComponent,ProfileComponent
   ],
   imports: [
     // RouterModule.forRoot(appRoutes),

@@ -1,0 +1,6 @@
+<h3>{{teamName}}</h3>
+<div>
+  <div *ngFor="let booking of bookings">
+    <booking [data]="booking" [searchBy]="searchType"></booking>
+  </div>
+</div>
