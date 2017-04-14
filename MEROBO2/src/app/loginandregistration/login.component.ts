@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {CookieService} from 'angular2-cookie/services/cookies.service'
+
 
 @Component({
   selector:'login',
@@ -12,11 +14,14 @@ export class LoginComponent{
   username:string;
   password:string;
 
-  constructor(private router:Router){
+  constructor(private router:Router, private cookieService : CookieService){
   }
 
   autheticate():void{
     if(this.username=="user" && this.password=="pass"){
+      this.cookieService.put("isAuthenticated", "true");
+      console.log('authenticated');
+      this.router.navigate(['/dashboard']);
     }
 
   }
