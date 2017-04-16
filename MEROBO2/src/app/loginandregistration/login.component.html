@@ -1,27 +1,29 @@
-<div class="table login-panel">
+<div class="row login-container">
   <div class="row">
-    <div class="col site-title">{{title}}</div>
-  </div>
-  <div class="row">
-    <div class="col sub-title">{{subTitle}}</div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <input [(ngModel)]="username" type="text" placeholder="Username"/>
+    <div class="col m3 offset-m4" style="text-align:center">
+      <h4 class="light-blue-text text-darken-4">{{title}}</h4>
+      <!-- <h6>{{subTitle}}</h6> -->
     </div>
   </div>
   <div class="row">
-    <div class="col">
-      <input [(ngModel)]="password" type="password" placeholder="Password"/>
+    <div class="input-field col m3 offset-m4 light-blue-text text-darken-4">
+      <label for="username">Username</label>
+      <input id="username" class="light-blue-text text-darken-4" [(ngModel)]="username" type="text"/>
     </div>
   </div>
   <div class="row">
-    <div class="col align-center">
-      <button (click)="autheticate()" type="button">Login</button>
+    <div class="input-field col m3 offset-m4">
+      <label for="password">Password</label>
+      <input id="password" [(ngModel)]="password" type="password"/>
     </div>
   </div>
   <div class="row">
-    <div class="col align-center">
+    <div class="col m3 offset-m5">
+      <a (click)="autheticate()" class="waves-effect waves-light btn light-blue darken-4">Login</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col m3 offset-m5">
       <a href="forgotpassword" class="links">Forgot Password</a>
     </div>
   </div>

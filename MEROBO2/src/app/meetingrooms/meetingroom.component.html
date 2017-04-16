@@ -1,7 +1,24 @@
-<div>{{name}}</div>
-<div>{{status}}</div>
-<div *ngIf="status == 1">
-  <div *ngFor="let booking of bookings">
-    <booking [data]="booking" [searchBy]="searchType"></booking>
+<div class="row">
+  <div class="col m4 offset-m2">
+    <h3>{{name}}</h3>
+  </div>
+  <div class="col m4 offset-m2">
+    <h3>Other</h3>
+  </div>
+</div>
+<div class="row" *ngIf="status == 1">
+  <div class="col m6">
+    <div class="row" *ngFor="let booking of bookings">
+      <div class="col m12">
+        <booking [data]="booking" [searchBy]="searchType"></booking>
+      </div>
+    </div>
+  </div>
+  <div class="col m6">
+    <div class="row" *ngFor="let booking of bookings">
+      <div class="col m12">
+        <booking [data]="booking" [searchBy]="searchType"></booking>
+      </div>
+    </div>
   </div>
 </div>

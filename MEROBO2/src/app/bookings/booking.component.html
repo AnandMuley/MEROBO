@@ -1,9 +1,11 @@
-<div class="title">
-  <h3 *ngIf="searchBy == 1">SearchBy : {{data.teamName}}</h3>
-  <div>{{data.startTime|date:'shortTime'}} to {{data.endTime|date:'shortTime'}}</div>
-</div>
-<div>
-  <h4>{{data.status}}</h4>
-  <div>{{data.bookingTime|date:'shortTime'}}</div>
-  <div>{{data.bookedBy}}</div>
+<div class="card blue-grey darken-1">
+  <div class="card-content white-text">
+    <span class="card-title" *ngIf="searchBy == 0">{{data.teamName}}</span>
+    <h5>{{data.bookedBy}}</h5>
+    <div>{{data.startTime|date:'shortTime'}} to {{data.endTime|date:'shortTime'}}</div>
+    <h6>{{data.status}}</h6>
+  </div>
+  <div class="card-action">
+    <a href="#">Cancel</a>
+  </div>
 </div>

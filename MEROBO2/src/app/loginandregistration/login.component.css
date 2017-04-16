@@ -1,65 +1,13 @@
-input{
-  height: 20px;
-  padding: 10px 16px;
-  font-size: 18px;
-  border-radius: 6px;
-  border: solid 1px #ccc;
-  width: 350px;
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid #01579b;
+     box-shadow: 0 1px 0 0 #01579b;
 }
 
-button{
-  border: solid 1px #01BF9D;
-  width: 100px;
-  height: 40px;
-  background-color: #01BF9D;
-  color: white;
-  font-size: 18px;
-  padding: 7px;
-  border-radius: 4px;
+.input-field input[type=password]:focus {
+     border-bottom: 1px solid #01579b;
+     box-shadow: 0 1px 0 0 #01579b;
 }
 
-.table{
-  display: table;
-  height: 220px;
-  padding: 30px;
-}
-
-.row{
-  display: table-row;
-}
-
-.col{
-  display: table-cell;
-}
-
-.site-title{
-  color: #01BF9D;
-  font-family: sans-serif;
-  font-size: 30px;
-}
-
-.sub-title{
-  color: #01BF9D;
-  font-family: sans-serif;
-  font-size: 13px;
-}
-
-.links{
-  color: #01BF9D;
-  text-decoration: none;
-  font-family: sans-serif;
-  padding: 5px;
-}
-
-.login-panel{
-  margin-left: 35%;
-  margin-top: 10%;
-}
-
-.align-right{
-  text-align: right;
-}
-
-.align-center{
-  text-align: center;
+.login-container{
+  background-image: url("o2 be more dog 3.jpg");
 }

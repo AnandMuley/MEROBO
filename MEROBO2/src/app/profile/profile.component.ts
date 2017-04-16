@@ -5,7 +5,7 @@ import {Booking} from '../bookings/booking'
 @Component({
   templateUrl:'./profile.component.html',
   selector: 'profile',
-  styleUrls: ['./profile.css']
+  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
   searchType: SearchBy;
