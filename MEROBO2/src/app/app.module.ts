@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MeetingRoomComponent } from './meetingrooms/meetingroom.component';
@@ -11,6 +10,8 @@ import {BookingComponent} from './bookings/booking.component';
 import {ProfileComponent} from './profile/profile.component'
 import {AuthInterceptor} from './auth-interceptor.service';
 import {CookieService} from 'angular2-cookie/services/cookies.service'
+import {HttpModule,JsonpModule} from '@angular/http'
+import {LoginService} from './loginandregistration/login.service'
 
 const appRoutes: Routes=[
   {path:'login',component:LoginComponent},
@@ -27,9 +28,10 @@ const appRoutes: Routes=[
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
-  providers: [AuthInterceptor, CookieService],
+  providers: [AuthInterceptor, CookieService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
