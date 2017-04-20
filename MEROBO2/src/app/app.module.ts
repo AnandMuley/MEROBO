@@ -12,6 +12,7 @@ import {AuthInterceptor} from './auth-interceptor.service';
 import {CookieService} from 'angular2-cookie/services/cookies.service'
 import {HttpModule,JsonpModule} from '@angular/http'
 import {LoginService} from './loginandregistration/login.service'
+import {BookingService} from './booking.service'
 
 const appRoutes: Routes=[
   {path:'login',component:LoginComponent},
@@ -31,7 +32,7 @@ const appRoutes: Routes=[
     HttpModule,
     JsonpModule
   ],
-  providers: [AuthInterceptor, CookieService,LoginService],
+  providers: [AuthInterceptor, CookieService,LoginService,BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

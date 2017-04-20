@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Booking} from '../bookings/booking';
 import {SearchBy} from '../bookings/booking.component';
+import {BookingService} from '../booking.service'
 
 enum MeetingRoomStatus {
   AVAILABLE =1,
@@ -20,13 +21,19 @@ export class MeetingRoomComponent {
   ];
   status: MeetingRoomStatus;
 
-  constructor() {
+  constructor(private bookingService:BookingService) {
     this.searchType = SearchBy.TEAMNAME;
     this.fetch();
   }
 
   fetch():void {
-    this.name = 'Pinnacle';
+    this.name = 'PINNACLE';
+    this.bookingService.getBookingsByRoom(this.name).subscribe(
+      bookingsData =>{
+        console.log("DATA : "+JSON.stringify(bookingsData))
+        this.bookings = bookingsData
+      }
+    )
     this.status = MeetingRoomStatus.AVAILABLE;
   }
 }
