@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {CookieService} from 'angular2-cookie/services/cookies.service'
 import {LoginService,ResponseData} from './login.service'
 
-
 @Component({
   selector:'login',
   templateUrl:'./login.component.html',

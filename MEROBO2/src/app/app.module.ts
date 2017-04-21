@@ -12,18 +12,19 @@ import {AuthInterceptor} from './auth-interceptor.service';
 import {CookieService} from 'angular2-cookie/services/cookies.service'
 import {HttpModule,JsonpModule} from '@angular/http'
 import {LoginService} from './loginandregistration/login.service'
-import {BookingService} from './booking.service'
+import {BookingService} from './booking.service';
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 const appRoutes: Routes=[
   {path:'login',component:LoginComponent},
   {path:'profile',component:ProfileComponent,canActivate:[AuthInterceptor]},
-  {path:'dashboard',component:MeetingRoomComponent,canActivate:[AuthInterceptor]},
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthInterceptor]},
   {path:'',redirectTo:'/login',pathMatch:'full'}
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,MeetingRoomComponent,LoginComponent,BookingComponent,ProfileComponent
+    AppComponent,MeetingRoomComponent,LoginComponent,BookingComponent,ProfileComponent, DashboardComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

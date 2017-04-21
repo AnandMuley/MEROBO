@@ -10,8 +10,6 @@ export class AuthInterceptor implements CanActivate{
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
     let redirectUrl = state.url;
-    console.log('Authenticating User...');
-    console.log(' cookie val' + this.cookieService.get("isAuthenticated"));
     if(this.cookieService.get("isAuthenticated") == "true") {
       console.log('successful.'+redirectUrl);
       return true;

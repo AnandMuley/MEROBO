@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/operator/catch'
 import 'rxjs/add/operator/map'
 import { Headers, RequestOptions } from '@angular/http'
+import {CookieService} from 'angular2-cookie/services/cookies.service'
 
 export class ResponseData{
   constructor(public message:string){}
@@ -14,7 +15,7 @@ export class LoginService{
 
   private loginUrl = "http://localhost:3000/login"
 
-  constructor(private http:Http){
+  constructor(private http:Http,private cookieService:CookieService){
 
   }
 
@@ -22,6 +23,18 @@ export class LoginService{
     let headers = new Headers({ 'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: headers });
     return this.http.post(this.loginUrl,{username,password},options).map(this.extractData).catch(this.handleError)
+  }
+
+  isLoggedIn():boolean{
+    let isAuth = false
+    if(this.cookieService.get("isAuthenticated") == "true"){
+      isAuth = true
+    }
+    return isAuth
+  }
+
+  logout():void{
+    this.cookieService.remove("isAuthenticated")
   }
 
   private extractData(res:Response){
