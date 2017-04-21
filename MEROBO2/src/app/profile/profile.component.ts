@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {SearchBy} from '../bookings/booking.component'
 import {Booking} from '../bookings/booking'
+import {BookingService} from '../booking.service'
 
 @Component({
   templateUrl:'./profile.component.html',
@@ -10,14 +11,14 @@ import {Booking} from '../bookings/booking'
 export class ProfileComponent {
   searchType: SearchBy;
   teamName: string;
-  bookings:Booking[]=[
-    new Booking("Avengers",Date.now(),Date.now() + 500000,"BOOKED",Date.now() - 500000,"Iron Man"),
-    new Booking("Avengers",Date.now(),Date.now() + 300000,"CANCELLED",Date.now() - 500000,"Hulk")
-  ];
+  bookings:Booking[];
 
-  constructor () {
+  constructor (bookingService:BookingService) {
     this.searchType = SearchBy.TEAMNAME;
-    this.teamName = "Avengers";
+    this.teamName = "LeanCRM";
+    bookingService.getBookingsByTeam(this.teamName).subscribe(bookingsData=>{
+      this.bookings = bookingsData
+    })
   }
 
 }
