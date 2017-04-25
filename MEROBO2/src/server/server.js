@@ -9,7 +9,8 @@ app.use(function(req,res,next){
   next()
 })
 var MongoClient = require('mongodb').MongoClient
-var DB_URL = 'mongodb://192.168.2.163:27017/mrbooking'
+// var DB_URL = 'mongodb://192.168.2.163:27017/mrbooking'
+var DB_URL = 'mongodb://localhost:27017/mrbooking'
 var db
 
 MongoClient.connect(DB_URL,(err,databaseHandle)=>{
@@ -44,13 +45,10 @@ app.get('/booking/searchby',function(req,res){
 app.post('/login',function(req,res){
   var authBody = req.body
   var encodedPwd = base64Encoder.encode(new Buffer(authBody.password).toString('base64'))
-  console.log("BUFF : "+encodedPwd)
     db.collection('users').find({"username" : authBody.username,"password":encodedPwd}).toArray(function(err,result){
-      console.log(err)
       if (err){
         res.json({"message":err})
       }
-      console.log(JSON.stringify(result))
       if(result.length == 0){
         res.json({"message":"failed"})
       }else{

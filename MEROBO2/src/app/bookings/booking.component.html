@@ -1,10 +1,10 @@
-<div class="card teal darken-1">
+<div class="card teal darken-1 hoverable">
   <div class="card-content white-text">
     <div class="row">
       <div class="col m4">
         <span class="card-title" *ngIf="searchBy == 1">{{data.teamName}}</span>
         <span class="card-title" *ngIf="searchBy == 0">{{data.roomName}}</span>
-        <h6><b>{{data.bookedBy}}</b></h6>
+        <h6><b>{{data.bookedBy|uppercase}}</b></h6>
       </div>
       <div class="col m5 offset-m3">
         <span class="card-title">{{data.status}}</span>
@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="card-action">
+  <!-- <div class="card-action">
     <a href="#">Cancel</a>
-  </div>
+  </div> -->
 </div>
