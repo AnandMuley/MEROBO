@@ -5,6 +5,7 @@ import 'rxjs/add/operator/catch'
 import 'rxjs/add/operator/map'
 import { Headers, RequestOptions } from '@angular/http'
 import {CookieService} from 'angular2-cookie/services/cookies.service'
+import {Router} from '@angular/router'
 
 export class ResponseData{
   constructor(public message:string){}
@@ -15,7 +16,7 @@ export class LoginService{
 
   private loginUrl = "http://localhost:3000/login"
 
-  constructor(private http:Http,private cookieService:CookieService){
+  constructor(private http:Http,private cookieService:CookieService,private router:Router){
 
   }
 
@@ -35,6 +36,7 @@ export class LoginService{
 
   logout():void{
     this.cookieService.remove("isAuthenticated")
+    this.router.navigate(['/login'])
   }
 
   private extractData(res:Response){

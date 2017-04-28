@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,Input} from '@angular/core';
 import {SearchBy} from '../bookings/booking.component'
 import {Booking} from '../bookings/booking'
 import {BookingService} from '../booking.service'
@@ -10,7 +10,7 @@ import {BookingService} from '../booking.service'
 })
 export class ProfileComponent {
   searchType: SearchBy;
-  teamName: string;
+  @Input() teamName: string;
   bookings:Booking[];
 
   constructor (bookingService:BookingService) {

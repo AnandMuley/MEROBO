@@ -1,3 +1,9 @@
+.page-footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
 .site-title{
   color: #01BF9D;
   font-family: monospace;

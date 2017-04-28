@@ -19,7 +19,8 @@ const appRoutes: Routes=[
   {path:'login',component:LoginComponent},
   {path:'profile',component:ProfileComponent,canActivate:[AuthInterceptor]},
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthInterceptor]},
-  {path:'',redirectTo:'/login',pathMatch:'full'}
+  {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'collapsible.html',redirectTo:'/login'}
 ];
 
 @NgModule({

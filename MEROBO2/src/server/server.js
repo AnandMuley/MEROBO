@@ -23,7 +23,7 @@ MongoClient.connect(DB_URL,(err,databaseHandle)=>{
 
 app.get('/booking/searchby',function(req,res){
   if(req.query.meetingRoom != undefined){
-    db.collection('bookings').find({"roomName":req.query.meetingRoom,"startTime":{"$gte":new Date()}}).toArray(function(err,result){
+    db.collection('bookings').find({"roomName":req.query.meetingRoom,"endTime":{"$gte":new Date()},"status":"BOOKED"}).toArray(function(err,result){
       if(err){
         res.json({"message":err})
       }else {
@@ -31,7 +31,7 @@ app.get('/booking/searchby',function(req,res){
       }
     })
   }else if(req.query.teamName != undefined){
-    db.collection('bookings').find({"teamName":req.query.teamName,"startTime":{"$gte":new Date()}}).toArray(function(err,result){
+    db.collection('bookings').find({"teamName":req.query.teamName,"endTime":{"$gte":new Date()}}).toArray(function(err,result){
       if(err){
         res.json({"message":err})
       }else {
