@@ -9,8 +9,8 @@ app.use(function(req,res,next){
   next()
 })
 var MongoClient = require('mongodb').MongoClient
-// var DB_URL = 'mongodb://192.168.2.163:27017/mrbooking'
-var DB_URL = 'mongodb://localhost:27017/mrbooking'
+// var DB_URL = 'mongodb://merobo.o2.co.uk:27017/mrbooking'
+var DB_URL = 'mongodb://merobo.o2.co.uk:27017/mrbooking'
 var db
 
 MongoClient.connect(DB_URL,(err,databaseHandle)=>{

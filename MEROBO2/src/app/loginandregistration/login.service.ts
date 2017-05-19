@@ -14,7 +14,7 @@ export class ResponseData{
 @Injectable()
 export class LoginService{
 
-  private loginUrl = "http://localhost:3000/login"
+  private loginUrl = "http://merobo.o2.co.uk:3000/login"
 
   constructor(private http:Http,private cookieService:CookieService,private router:Router){
 

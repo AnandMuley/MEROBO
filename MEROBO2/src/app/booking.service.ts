@@ -9,7 +9,7 @@ import {Booking} from './bookings/booking'
 @Injectable()
 export class BookingService {
 
-  private bookingUrl = "http://localhost:3000/booking/searchby"
+  private bookingUrl = "http://merobo.o2.co.uk:3000/booking/searchby"
 
   constructor(private http:Http) { }
 
