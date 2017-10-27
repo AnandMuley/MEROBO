@@ -25,7 +25,12 @@ const appRoutes: Routes=[
 
 @NgModule({
   declarations: [
-    AppComponent,MeetingRoomComponent,LoginComponent,BookingComponent,ProfileComponent, DashboardComponent
+    AppComponent,
+    MeetingRoomComponent,
+    LoginComponent,
+    BookingComponent,
+    ProfileComponent,
+    DashboardComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -34,7 +39,11 @@ const appRoutes: Routes=[
     HttpModule,
     JsonpModule
   ],
-  providers: [AuthInterceptor, CookieService,LoginService,BookingService],
+  providers: [
+    AuthInterceptor, 
+    CookieService,
+    LoginService,
+    BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
